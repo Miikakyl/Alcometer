@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import './alcometer.css'
 
 const Alcometer = () => {
 
@@ -31,16 +32,16 @@ const Alcometer = () => {
     }
 
     return (
-        <div>
-            <h2>Calculating alcohol blood level</h2>
+        <div className="container">
+            <h3>Calculating alcohol blood level</h3>
             <form onSubmit={handleForm}>
-                <div>
-                    <label>Weight </label>
-                    <input type="number" value={weight} onChange={e => setWeight(e.target.value)}></input>
+                <div className="inputContainer">
+                    <label>Weight</label>
+                    <input className="inputs" type="number" value={weight} onChange={e => setWeight(e.target.value)}></input>
                 </div>
-                <div>
-                    <label>Bottles </label>
-                    <select value={bottles} onChange={e => setBottles(e.target.value)}>
+                <div className="inputContainer">
+                    <label>Bottles</label>
+                    <select className="inputs" value={bottles} onChange={e => setBottles(e.target.value)}>
                         {optionValues.map(optionValue => {
                             return (
                                 <option value={optionValue} key={optionValue}>{optionValue}</option>
@@ -48,9 +49,9 @@ const Alcometer = () => {
                         })}  
                     </select>
                 </div>
-                <div>
-                    <label>Time </label>
-                    <select value={time} onChange={e => setTime(e.target.value)}>
+                <div className="inputContainer">
+                    <label className="timeLabel">Time</label>
+                    <select className="inputs" value={time} onChange={e => setTime(e.target.value)}>
                         {optionValues.map(optionValue => {
                                 return (
                                     <option value={optionValue} key={optionValue}>{optionValue}</option>
